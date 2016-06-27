@@ -2,16 +2,16 @@ package test;
 
 import page.classes.*;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
+
 import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import junit.framework.Assert;
 
-
-@SuppressWarnings("deprecation")
 public class HaTest {
 	private WebDriver driver;
 	private String baseUrl;
@@ -66,7 +66,7 @@ public class HaTest {
 		System.out.println("=====================================================");
 		System.out.println("Actual price	: " + ActualPrice);
 		System.out.println("Expected Price	: " + ExpectedPrice);
-		Assert.assertEquals(ExpectedPrice, ActualPrice);
+		assertEquals(ExpectedPrice, ActualPrice);
 		System.out.println("=====================================================");
 	}
 
@@ -117,27 +117,27 @@ public class HaTest {
 		System.out.println("=====================================================");
 		String actualFN = EditProfile.actualFirstName(driver);
 		System.out.println("Actual First Name: " + actualFN);
-		Assert.assertEquals("Prashanth", actualFN);
+		assertEquals("Prashanth", actualFN);
 
 		String actualLN = EditProfile.actualLastName(driver);
 		System.out.println("Actual Last Name: " + actualLN);
-		Assert.assertEquals("Eswarapu", actualLN);
+		assertEquals("Eswarapu", actualLN);
 
 		String actualnickName = EditProfile.actualNickName(driver);
 		System.out.println("Actual Nickname: " + actualnickName);
-		Assert.assertEquals("Shan", actualnickName);
+		assertEquals("Shan", actualnickName);
 
 		String displayName = EditProfile.actualDisplayName(driver);
 		System.out.println("Actaul Display: " + displayName);
-		Assert.assertEquals("Prashanth", displayName);
+		assertEquals("Prashanth", displayName);
 
 		String actualUrl = EditProfile.actualWebsite(driver);
 		System.out.println("Actual Website: " + actualUrl);
-		Assert.assertEquals("http://abc.com", actualUrl);
+		assertEquals("http://abc.com", actualUrl);
 
 		String actualDescription = driver.findElement(By.id("description")).getText();
 		System.out.println("Actual Description: " + actualDescription);
-		Assert.assertEquals("Hello! My Name is Prashanth Eswarapu", actualDescription);
+		assertEquals("Hello! My Name is Prashanth Eswarapu", actualDescription);
 		System.out.println("=====================================================");
 
 	}
@@ -167,7 +167,7 @@ public class HaTest {
 		System.out.println("Actual Message when cart is empty: "+actualMessage);
 		System.out.println("Expected Message when cart is empty: "+expectedMessage);
 		System.out.println("=====================================================");
-		Assert.assertEquals(actualMessage, expectedMessage);
+		assertEquals(actualMessage, expectedMessage);
 		
 		
 	}
